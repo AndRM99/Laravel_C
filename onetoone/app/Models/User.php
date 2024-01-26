@@ -33,6 +33,18 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+
+
+    // La relación "hasOne" se utiliza en Eloquent para establecer una relación de uno a uno con otro modelo. 
+    public function address(){
+
+        return $this->hasOne('App\Models\Address');
+
+    }
+
+
+
+
     /**
      * The attributes that should be cast.
      *
