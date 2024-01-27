@@ -33,6 +33,14 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function roles(){
+
+
+        return $this->belongsToMany('App\Models\Role');
+    }
+
+
+
     /**
      * The attributes that should be cast.
      *
