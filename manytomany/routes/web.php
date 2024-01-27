@@ -121,8 +121,6 @@ Route::get('/sync', function(){
 
     $user = User::findOrFail(1);
 
-    //$user->roles()->detach(6);
-
     $user->roles()->sync([5,7]);
 
 });

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('user_id')->usigned()->nullable();
+            $table->integer('user_id')->usigned()->nullable(); //Definir una columna de tipo entero sin signo en una tabla de base de datos, que puede almacenar valores NULL.
             $table->timestamps();
         });
     }
