@@ -397,7 +397,7 @@ Route::get('/', function () {
 // });
 
 
-Route::get('/tat/post/', function(){
+Route::get('/tag/post/', function(){
 
     $tag = Tag::find(2);
 

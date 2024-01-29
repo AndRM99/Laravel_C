@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned(); //No puede tener un valor negativo
-            $table->string('title');
-            $table->text('content');
+            $table->string('name');
             $table->timestamps();
         });
     }
