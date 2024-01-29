@@ -11,13 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('taggables', function (Blueprint $table) {
-            //$table->id();
-            $table->integer('tag_id');
-            $table->integer('taggable_id');
-            $table->string('taggable_type');
-            $table->timestamps();
-        });
+
+        //Tuve que hacer este condicional para solucionar un error :(
+        if (!Schema::hasTable('taggables')) { 
+            Schema::create('taggables', function (Blueprint $table) {
+                //$table->id();
+                $table->integer('tag_id');
+                $table->integer('taggable_id');
+                $table->string('taggable_type');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

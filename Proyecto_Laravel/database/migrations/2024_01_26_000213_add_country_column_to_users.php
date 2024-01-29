@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             
             //se utiliza para almacenar números enteros sin decimales, como edades, números de identificación, etc.
-            $table->id(); 
+           // $table->id(); 
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
 
-            $table->dropColumn('country_id');
+            //$table->dropColumn('country_id');
         });
     }
 };

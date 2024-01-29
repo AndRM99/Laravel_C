@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\PostsController;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Country;
@@ -397,14 +398,19 @@ Route::get('/', function () {
 // });
 
 
-Route::get('/tag/post/', function(){
+// Route::get('/tag/post/', function(){
 
-    $tag = Tag::find(2);
+//     $tag = Tag::find(2);
 
-    return $tag;
+//     return $tag;
 
-    // foreach($tag->posts as $post){
-    //     return $post->title;
-    // }
+//      foreach($tag->posts as $post){
+//      return $post->title;
+//}
 
-});
+// });
+
+
+
+Route::resource('/posts','PostsController@index');
+
