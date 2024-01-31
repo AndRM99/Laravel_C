@@ -48,6 +48,13 @@ class Post extends Model
 
     }
 
+    //Ordenar de manera ascendiente mediante los ids de los datos en la tabla
+    // public static function scopeLatest($query){
+
+
+    //     return $query->orderBy('id', 'asc')->get();
+    // }
+
 
 
     use HasFactory;

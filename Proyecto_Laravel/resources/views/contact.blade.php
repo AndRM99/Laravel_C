@@ -33,17 +33,20 @@
 
 @section('content')
 
-    <div class="container text-center">
-        <h1 style="color: white;">Contact Page</h1>
+   
+    <h1 style="color: white;">Contact Page</h1>
 
-        @if(count($people))
-            <ul class="list-group" style="color: white;">
-                @foreach($people as $person)
-                    <li class="list-group-item">{{$person}}</li>
-                @endforeach
-            </ul>
+    @if(count($people))
+
+        <ul>
+        @foreach($people as $person)
+             <li>{{$person}}</li>
+
+        @endforeach
+
+        </ul>
+        
         @endif
-    </div>
 
 @stop
 

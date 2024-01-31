@@ -66,6 +66,27 @@ class User extends Authenticatable
     }
 
 
+    public function getNameAttribute($value){
+
+        //retorna el nombre con la primera letra en mayuscula
+       // return ucfirst($value);
+
+        //retorna todo el nombre en mayuscula
+        return strtoupper($value);
+
+    }
+
+
+    public function setNameAttribute($value){
+
+
+        $this->attributes['name'] = strtoupper($value);
+
+
+
+    }
+
+
 
     /**
      * The attributes that should be cast.

@@ -1,12 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\PostsController;
+use App\Http\Controllers\PostsController;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Country;
 use App\Models\Photo;
 use App\Models\Tag;
+use Carbon\Carbon;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -411,6 +413,70 @@ Route::get('/', function () {
 // });
 
 
+//crea automáticamente rutas para manejar operaciones básicas de un recurso llamado "posts" 
+//incluyen mostrar una lista de posts, crear un nuevo post, mostrar un post específico
+// editar un post existente y eliminar un post. 
+//Route::resource('posts', PostsController::class);
 
-Route::resource('/posts','PostsController@index');
 
+//Route::post('/post', 'PostsController@store')->name('post.store');
+
+
+//Se puede esta manera tambien
+// Route::resource('posts', PostsController::class)->names([
+//     'create' => 'posts.create', // Nombre para la ruta de creación
+//     'store' => 'posts.store',   // Nombre para la ruta de almacenamiento
+//     'update' => 'posts.update', // Nombre para la ruta de actualización
+// ]);
+
+Route::group(['Middleware' => 'web'], function () {
+    Route::resource('posts', PostsController::class);
+});
+
+//Tiempo y fecha
+Route::get('/dates', function(){
+
+    $date = new DateTime('+1 week');
+    
+    echo $date->format('M-D-Y');
+
+    echo '<br>';
+
+
+    //Dias
+    echo Carbon::now()->addDays(10)->diffForHumans();
+
+    echo '<br>';
+
+    //Meses
+    echo Carbon::now()->addMonths(5)->diffForHumans();
+
+    echo '<br>';
+
+    //Dias anteriores
+    echo Carbon::now()->yesterday();
+    
+    echo '<br>';
+
+});
+
+
+Route::get('/getname',function(){
+
+    $user = User::find(1);
+
+    echo $user->name;
+
+});
+
+
+//Da nombre al dato de id 1 en users en la columna de name, en ese caso se podria cambiar el nombre
+Route::get('/setname',function(){
+
+    $user = User::find(1);
+
+    $user->name = "Dillom";
+
+    $user->save();
+
+});
