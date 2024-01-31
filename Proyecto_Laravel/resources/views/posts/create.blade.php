@@ -13,7 +13,24 @@
         {!! Form::label('title', 'Title') !!}
 
         {!! Form::text('title', null, ['class'=>'form-control']) !!}
+
     </div>
+
+
+    <!-- <div class="form-group">
+
+    {!! Form::label('file', 'File') !!}
+    {!! Form::file('file', ['class'=>'form-control']) !!}
+
+    </div>-->
+
+    <div clas="form-group">
+
+    {!! Form::file('file', ['class'=>'form-control']) !!}
+
+    </div> 
+
+
 
     <div clas="form-group">
 

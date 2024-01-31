@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Post extends Model
 {
 
+    public $directory = "/images/";
     use SoftDeletes;
 
     
@@ -21,11 +22,7 @@ class Post extends Model
     
 
     //Debemos de hacer esto para poder ingresar los datos en web.php de la funcion create
-    protected $fillable = [
-        'title',
-        'content'
-
-    ];
+    protected $fillable = ['title','content','path'];
 
 
     public function user(){
@@ -46,6 +43,13 @@ class Post extends Model
 
         return $this->morphToMany('App\Models\Tag', 'taggable');
 
+    }
+
+
+
+    public function getPathAttribute($value){
+
+        return $this->directory . $value;
     }
 
     //Ordenar de manera ascendiente mediante los ids de los datos en la tabla
