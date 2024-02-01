@@ -1,6 +1,8 @@
+//Crear el proyecto
+composer create-project laravel/laravel nombredeproyecto
+
 //Instalar el paquete de formularios y HTML//
 composer require laravelcollective/html
-
 
 //Instalar el paquete Laravel UI para generar vistas de autenticación//
 composer require laravel/ui
