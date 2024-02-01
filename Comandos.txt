@@ -1,0 +1,30 @@
+//Crear el proyecto
+composer create-project laravel/laravel nombredeproyecto
+
+//Instalar el paquete de formularios y HTML//
+composer require laravelcollective/html
+
+//Instalar el paquete Laravel UI para generar vistas de autenticación//
+composer require laravel/ui
+
+//Generar las vistas de autenticación//
+php artisan ui bootstrap --auth
+
+//Instalar y configurar npm (si aún no está configurado)//
+npm install
+
+//Compilar los assets con el comando php artisan serve//
+npm run dev
+
+//Instalar Vite (si se requiere)//
+npm install --save-dev vite
+
+//Limpiar la configuración (si es necesario)//
+php artisan config:clear
+
+//Habilitar o deshabilitar el middleware (si es necesario)//
+php artisan up/down
+
+//Para poder enviar correos, instalar GuzzleHTTP//
+composer require guzzlehttp/guzzle
+

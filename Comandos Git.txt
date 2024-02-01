@@ -1,0 +1,281 @@
+    <>COMANDOS GIT<>
+
+//CONFIGURACIÓN BÁSICA//
+
+configura el nombre de usuario global en Git
+
+git config --global user.name "tu_nombre_de_usuario"
+
+
+Configura el Email
+git config --global user.email user@gmail.com
+
+
+Marco de colores para los comando
+git config --global color.ui true
+
+
+//INICIANDO REPOSITORIO//
+
+Iniciamos GIT en la carpeta donde esta el proyecto
+git init
+
+
+Clonamos el repositorio de github o bitbucket
+git clone <url>
+
+
+Añadimos todos los archivos para el commit
+git add .
+
+
+Hacemos el primer commit
+git commit -m "Description"
+
+
+Subimos al repositorio
+git push origin master
+
+<>GIT CLONE<>
+
+Clonamos el repositorio de github o bitbucket
+git clone <url>
+
+
+Clonamos el repositorio de github o bitbucket con un nombre personalizado
+
+git clone <url> git-demo
+
+
+<>GIT ADD<>
+
+Añadimos todos los archivos para el commit
+git add .
+
+
+Añadimos el archivo para el commit
+git add <archivo>
+
+
+Añadimos todos los archivos para el commit omitiendo los nuevos
+git add --all 
+
+
+Añadimos todos los archivos con la extensión especificada
+git add *.txt
+
+
+Añadimos todos los archivos dentro de un directorio y de una extensión especifica
+git add docs/*.txt
+
+
+Añadimos todos los archivos dentro de un directorio
+git add docs/
+
+
+<>GIT COMMIT<>
+Cargar en el HEAD los cambios realizados
+
+git commit -m "Description"
+
+
+Agregar y Cargar en el HEAD los cambios realizado
+
+git commit -a -m "Nuevo mensaje"
+
+
+De haber conflictos los muestra
+
+git commit -a 
+
+
+Agregar al último commit, este no se muestra como un nuevo commit en los logs. Se puede especificar un nuevo mensaje
+
+git commit --amend -m  "Nuevo mensaje"
+
+
+<>GIT PUSH<>
+
+Subimos al repositorio
+git push <origin> <branch>
+
+
+Subimos un tag
+git push --tags
+
+
+<>GIT LOG<>
+
+Muestra los logs de los commits
+git log
+
+
+Muestra los cambios en los commits
+git log --oneline --stat
+
+
+Muestra gráficos de los commits
+git log --oneline --graph
+
+
+
+<>GIT DIFF<>
+Muestra los cambios realizados a un archivo
+git diff
+git diff --staged
+
+
+
+<>GIT HEAD<>
+
+Saca un archivo del commit
+
+git reset HEAD <archivo>
+
+
+
+Devuelve el último commit que se hizo y pone los cambios en staging
+git reset --soft HEAD^
+
+
+Devuelve el último commit y todos los cambios
+git reset --hard HEAD^
+
+
+Devuelve los 2 últimos commits y todos los cambios
+git reset --hard HEAD^^
+
+
+Rollback merge/commit
+git log
+git reset --hard <commit_sha>
+
+
+
+<>GIT REMOTE<>
+
+Agregar repositorio remoto
+git remote add origin <url>
+
+
+Cambiar de remote
+git remote set-url origin <url>
+
+
+Remover repositorio
+git remote rm <name/origin>
+
+
+
+Muestra lista de repositorios
+git remote -v
+
+
+Muestra los branches remotos
+git remote show origin
+
+
+
+Limpiar todos los branches eliminados
+git remote prune origin 
+
+
+
+<>GIT BRANCH<>
+
+Crea un branch
+git branch <nameBranch>
+
+
+Lista los branches
+git branch
+
+
+Comando -d elimina el branch y lo une al master
+git branch -d <nameBranch>
+
+
+Elimina sin preguntar
+git branch -D <nameBranch>
+
+
+<>GIT TAG<>
+
+Muestra una lista de todos los tags
+git tag
+
+
+Crea un nuevo tag
+git tag -a <version> -m "Esta es la versión x"
+
+
+<>GIT REBASE<>
+Los rebase se usan cuando trabajamos con branches, esto hace que los 
+branches se pongan al día con el master sin afectar al mismo.
+
+
+Une el branch actual con el master, esto no se puede ver como un merge
+git rebase
+
+
+Cuando resolvemos los conflictos --continue, continúa la secuencia del rebase donde se pausó
+git rebase --continue 
+
+
+Omite el conflicto y sigue su camino
+git rebase --skip
+
+
+Devuelve todo al principio del rebase
+git rebase --abort
+
+
+Para hacer un rebase a un branch en específico
+git rebase <nameBranch>
+
+
+<>Fork<>
+
+Descargar remote de un fork
+git remote add upstream <url>
+
+
+Merge con master de un fork
+git fetch upstream
+git merge upstream/master
+
+
+<>OTROS COMANDOS<>
+
+Lista un estado actual del repositorio con lista de archivos modificados o agregados
+git status
+
+
+Quita del HEAD un archivo y le pone el estado de no trabajado
+git checkout -- <file>
+
+
+Crea un branch en base a uno online
+git checkout -b newlocalbranchname origin/branch-name
+
+
+Busca los cambios nuevos y actualiza el repositorio
+git pull origin <nameBranch>
+
+
+Cambiar de branch
+git checkout <nameBranch/tagname>
+
+
+Une el branch actual con el especificado
+git merge <nameBranch>
+
+
+Verifica cambios en el repositorio online con el local
+git fetch
+
+
+Borrar un archivo del repositorio
+git rm <archivo>
+
+
