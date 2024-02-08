@@ -46,7 +46,7 @@
                       <tr>
                         <td>{{$post->id}}</td>
                         <td>{{$post->user->name}}</td>
-                         <td><a href="{{route('post.edit', $post->id)}}">{{$post->title}}</a></td>
+                        <td><a href="{{route('post.edit', $post->id)}}">{{$post->title}}</a></td>
                         <td>
                           <img width="100px" src="{{asset($post->post_image)}}" alt="">
                         </td>
@@ -62,7 +62,6 @@
 
                           </td>
                       </tr>
-
                     @endforeach
                   </tbody>
                 </table>
@@ -70,12 +69,12 @@
             </div>
           </div>
 
-          <div class="d-flex">
-            <div class="mx-auto">
-              {{$posts->links()}}
+            <div class="d-flex">
+              <div class="mx-auto">
+                  {{$posts->links()}}
+              </div>
             </div>
-          </div>
-
+            
     @endsection
 
     @section('scripts')
