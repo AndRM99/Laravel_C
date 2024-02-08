@@ -22,6 +22,7 @@ class PostPolicy
     public function view(User $user, Post $post): bool
     {
         //
+        return $user->id === $post->user_id;
     }
 
     /**
@@ -31,15 +32,18 @@ class PostPolicy
     {
         //
 
-        return true;
+        //return true;
+        return $user->is($user);
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Post $post): bool
+    public function update(User $user, Post $post)
     {
         //
+        return $user->id === $post->user_id;
+
     }
 
     /**
@@ -48,6 +52,8 @@ class PostPolicy
     public function delete(User $user, Post $post): bool
     {
         //
+
+        return $user->id === $post->user_id;
     }
 
     /**
