@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Permission;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -75,7 +76,7 @@ class User extends Authenticatable
 
     public function userHasRole($role_name) {
         foreach ($this->roles as $role) {
-            if ($role_name == $role->name) 
+            if (Str::lower($role_name) == Str::lower($role->name)) 
                 return true;
             
         }

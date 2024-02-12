@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
 
         //Permite agregar 10 datos a la tabla posts con el comando php artisan db:seed
-        \App\Models\User::factory(10)->create()->each(function ($user) {
+        \App\Models\User::factory(100)->create()->each(function ($user) {
 
             $user->posts()->save(Factory::factoryForModel('App\Models\Post')->make());
 

@@ -14,7 +14,8 @@
                     @method('PUT')
                     
                     <div class="mb-4">
-                        <img class="img-profile rounded-circle" src="{{$user->avatar}}">
+                        <!-- <img class="img-profile rounded-circle" src="{{$user->avatar}}"> -->
+                        <img class="img-profile rounded-circle" src="https://i.pinimg.com/736x/c3/31/54/c33154a6bcc9935e769ac8011fef6ad0.jpg" style="width: 50%;>
                     </div>
 
                     <div class="form-group">
